@@ -1,0 +1,48 @@
+{
+  "name": "p4",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@andyet/simplewebrtc": "^1.7.4",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.4",
+    "emotion": "^9.2.12",
+    "react": "^16.6.3",
+    "react-contenteditable": "^3.2.1",
+    "react-dom": "^16.6.3",
+    "react-emotion": "^9.2.12",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.2",
+    "webpack-dev-server": "3.1.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "webpack-cli": "^3.1.2",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "proxy": "http://localhost:3001/"
+}

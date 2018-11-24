@@ -3,7 +3,7 @@ const db = require('../db/config');
 const Chatroom = {};
 
 Chatroom.findAll = () => {
-  return db.query(`SELECT * FROM chatroom ORDER BY id ASC`);
+  return db.query(`SELECT * FROM chatroom ORDER BY id DESC`);
 };
 
 // Chatroom.findById = id => {
@@ -20,11 +20,11 @@ Chatroom.create = chatroom => {
   return db.one(
     `
     INSERT INTO chatroom
-    (roomname, waitingid)
-    VALUES ($1, $2)
+    (roomname, waitingid, users)
+    VALUES ($1, $2, $3)
     RETURNING *
   `,
-    [chatroom.roomname, chatroom.waitingid]
+    [chatroom.roomname, chatroom.waitingid, chatroom.users]
   );
 };
 

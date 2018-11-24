@@ -33,7 +33,8 @@ chatroomController.index = (req, res) => {
 chatroomController.create = (req, res) => {
   Chatroom.create({
     roomname: req.body.roomname,
-    waitingid: req.body.waitingid
+    waitingid: req.body.waitingid,
+    users: req.body.users
   })
     .then(chatroom => {
       res.json({

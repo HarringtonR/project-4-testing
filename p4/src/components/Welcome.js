@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
+import { Provider } from "react-redux";
+import * as SWRTC from "@andyet/simplewebrtc";
+
+const store = SWRTC.createStore();
+window.store = store;
+
+const API_KEY = 'eb79cb49def49b161474d1cf';
+
+const config_Url = `https://api.simplewebrtc.com/config/guest/${API_KEY}`;
 
 function makeid() {
   var text = "";
@@ -22,25 +31,6 @@ export default class Welcome extends Component {
 
   componentDidMount() {
     this.newRoom();
-    axios.get('/VideoPage')
-      .then(res => {
-        this.setState(prevState => ({
-          room: res.data.data[0].roomname
-        }))
-        console.log(`this is the room name --> ${this.state.room}`)
-      }).then(
-        axios.get(`https://api.ipify.org`)
-        .then((res) => {
-          let user = res.data
-          this.setState({
-              users: user,
-            })
-          this.state.availableUsers.push(this.state.users)
-            console.log(this.state.users)
-            let numberOfUsers = this.state.availableUsers.length
-            console.log(numberOfUsers)
-        }))
-    this.redirect()
   }
 
 
@@ -50,15 +40,6 @@ export default class Welcome extends Component {
             })
       }
 
-  redirect() {
-    if (this.state.availableUsers.length > 1) {
-      this.setState({
-        fireRedirect: true
-      })
-    } else {
-      console.log('waiting')
-    }
-  }
 
 
 
@@ -76,15 +57,89 @@ export default class Welcome extends Component {
   // if(peers.length > 1){
   //       this.newRoom()
   //     }
+  // render() {
+  //   return (
+  //     <div className="Welcome">
+  //       <h1>Waiting Room</h1>
+  //        <h2><Link to={`/VideoPage`}>Chat will begin when there is a available user</Link></h2>
+  //        {this.state.fireRedirect
+  //         ? <Redirect push to={`/VideoPage`} />
+  //         : ''}
+  //     </div>
+  //   )
+  // }
+
+
+//   renderWaitingRoom() {
+//   console.log("waiting room")
+//  //     const ROOM_NAME = this.state.room
+//   return (
+//     <SWRTC.Room name="waiting">
+//                   {({room, peers, localMedia, remoteMedia}) => {
+//                      if (peers.length == 1) {
+
+//            <Redirect push to={`/VideoPage`} />
+
+//                       } else {
+//                         return (<div className="Welcome">
+//                     <h1>Waiting Room</h1>
+//                      <h2><Link to={`/VideoPage`}>Chat will begin when there is a available user</Link></h2>
+
+//                   </div>);
+//                       }
+//              }}
+
+//            </SWRTC.Room>
+//   );
+
+// }
+
+// renderNewRoom() {
+//   console.log("new room fool")
+//    // waitingid = ROOM_NAME;
+//                //this.setState({ waitingid: new_room})
+//   return this.renderMyRoom(this.name)
+// }
+
+
+
+// {this.state.roomName ? this.renderWaitingRoom() : this.renderNewRoom()
+//               }
   render() {
+    const { userData } = this.props;
     return (
-      <div className="Welcome">
-        <h1>Waiting Room</h1>
-         <h2><Link to={`/VideoPage`}>Chat will begin when there is a available user</Link></h2>
-         {this.state.fireRedirect
-          ? <Redirect push to={`/VideoPage`} />
-          : ''}
-      </div>
-    )
+      <Provider
+    store={store}
+    userData={userData}
+    roomName={"waiting room"}
+     >
+      <SWRTC.Provider configUrl={config_Url}>
+        {/* Render based on the connection state */}
+        <SWRTC.Connecting>
+          <h1>Connecting...</h1>
+        </SWRTC.Connecting>
+          <SWRTC.Connected>
+            <h1>Connected!</h1>
+              <SWRTC.RequestUserMedia audio video auto />
+                  <SWRTC.Room name="waiting">
+                  {({room, peers, localMedia, remoteMedia}) => {
+                     if (peers.length == 1) {
+
+                        return <Redirect push to={`/VideoPage`} />
+
+                      } else {
+                        return (<div className="Welcome">
+                    <h1>Waiting Room</h1>
+                     <h2><Link to={`/VideoPage`}>Chat will begin when there is a available user</Link></h2>
+
+                  </div>);
+                      }
+             }}
+
+           </SWRTC.Room>
+        </SWRTC.Connected>
+      </SWRTC.Provider>
+    </Provider>
+    );
   }
 }

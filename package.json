@@ -4,6 +4,7 @@
   "description": "## Project Links [Project Repo](https://git.generalassemb.ly/agorfine/Project3-Instagram)",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js",
     "client": "cd p4 && npm start",

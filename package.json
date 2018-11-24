@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server.js",
     "client": "cd p4 && npm start",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm install && cd p4 && npm install --only-dev && npm install && npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
     "body-parser": "^1.18.3",
     "bower": "^1.8.4",
     "express": "^4.16.4",
+    "heroku": "^7.18.9",
     "morgan": "^1.9.1",
     "node-random-name": "^1.0.1",
     "nodemon": "^1.18.6",

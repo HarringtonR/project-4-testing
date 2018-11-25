@@ -6,9 +6,7 @@ import * as SWRTC from "@andyet/simplewebrtc";
 
 const store = SWRTC.createStore();
 window.store = store;
-
 const API_KEY = 'eb79cb49def49b161474d1cf';
-
 const config_Url = `https://api.simplewebrtc.com/config/guest/${API_KEY}`;
 
 function makeid() {

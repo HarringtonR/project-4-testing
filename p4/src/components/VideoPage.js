@@ -1,6 +1,5 @@
 import React from 'react';
 import { Provider } from "react-redux";
-import { Link, Redirect } from 'react-router-dom';
 import * as SWRTC from "@andyet/simplewebrtc";
 import { Actions, Selectors, GridLayout, Video } from "@andyet/simplewebrtc";
 import { StyledUIContainer, StyledMainContainer, StyledVideoContainer } from './Styles.js';
@@ -63,43 +62,6 @@ class VideoPageController extends React.Component {
   );
 }
 
-
-
-// renderWaitingRoom() {
-//   console.log("waiting room")
-//  //     const ROOM_NAME = this.state.room
-//   return (
-//     <SWRTC.Room name="waiting">
-//                   {({room, peers, localMedia, remoteMedia}) => {
-//                      if (peers.length == 1) {
-
-//            <Redirect push to={`/VideoPage`} />
-
-//                       } else {
-//                         return (<div className="Welcome">
-//                     <h1>Waiting Room</h1>
-//                      <h2><Link to={`/VideoPage`}>Chat will begin when there is a available user</Link></h2>
-
-//                   </div>);
-//                       }
-//              }}
-
-//            </SWRTC.Room>
-//   );
-
-// }
-
-// renderNewRoom() {
-//   console.log("new room fool")
-//    // waitingid = ROOM_NAME;
-//                //this.setState({ waitingid: new_room})
-//   return this.renderMyRoom(this.name)
-// }
-
-
-
-// {this.state.roomName ? this.renderWaitingRoom() : this.renderNewRoom()
-//               }
   render() {
     const { userData } = this.props;
     return (

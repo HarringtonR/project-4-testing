@@ -19,8 +19,8 @@ app.listen(PORT, () => {
 const chatroom = require('./routes/routes');
 app.use('/videoPage', chatroom);
 
-const welcome = require('./routes/routes');
-app.use('/Welcome', welcome);
+// const welcome = require('./routes/routes');
+// app.use('/Welcome', welcome);
 
 app.use('*', (req, res) => {
   res.status(400).json({

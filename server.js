@@ -13,10 +13,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors()) ;
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
+
+app.get('/', (req, res) => {
+  res.send('hello world');
+});
+
 
 const chatroom = require('./routes/routes');
 app.use('/videoPage', chatroom);

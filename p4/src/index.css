@@ -1,10 +1,10 @@
 *{
+  margin: 0 auto;
   background-color: #343434;
 }
 .App{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   height: 100vh;
 }
 
@@ -12,5 +12,29 @@ h1{
   color: white;
 }
 
-.video body{
+video{
+   width: 100%;
+   height: 100%;
+   margin: auto;
+   justify-content: center;
+   align-self: center;
 }
+
+.StyledUIContainer {
+    display: flex;
+
+}
+
+.StyledMainContainer{
+   display: flex;
+   width: 100vw;
+   height: 100vh;
+
+}
+
+.StyledVideoContainer{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    align-self: center;
+  }

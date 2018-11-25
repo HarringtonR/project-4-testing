@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from "react-redux";
 import * as SWRTC from "@andyet/simplewebrtc";
 import { Actions, Selectors, GridLayout, Video } from "@andyet/simplewebrtc";
-import { StyledUIContainer, StyledMainContainer, StyledVideoContainer } from './Styles.js';
 import axios from 'axios';
 
 
@@ -43,18 +42,18 @@ class VideoPageController extends React.Component {
                         console.log(this.state.room)
                         console.log(peers.length)
                        return (
-                    <StyledUIContainer>
-                      <StyledMainContainer>
-                        <StyledVideoContainer>
+                    <div className='StyledUIContainer'>
+                      <div className='StyledMainContainer'>
+                        <div className ='StyledVideoContainer'>
 
                           <GridLayout
                             className='videogrid'
                             items={[...localVideos, ...remoteVideos]}
                             renderCell={(item) => (<Video media={item} />)}
                           />
-                      </StyledVideoContainer>
-                     </StyledMainContainer>
-                    </StyledUIContainer>
+                      </div>
+                     </div>
+                    </div>
                 )
              }
            }

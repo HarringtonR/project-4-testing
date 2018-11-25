@@ -1,94 +1,89 @@
 // This demo is using react-emotion for styling, but that is
 // NOT a requirement for using SimpleWebRTC
 
-import styled, { css, injectGlobal } from 'react-emotion';
+import styled, { css } from 'react-emotion';
 
-injectGlobal`
-  body {
-    margin: 0;
-    font-size: 14px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  }
+// injectGlobal`
+//   body {
+//     margin: 0;
+//     font-size: 14px;
+//     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+//   }
 
-  img {
-    vertical-align: middle;
-    margin: 5px;
-    border-radius: 5px;
-  }
+//   img {
+//     vertical-align: middle;
+//     margin: 5px;
+//     border-radius: 5px;
+//   }
 
-  button {
-    margin: 5px;
-  }
-`;
+//   button {
+//     margin: 5px;
+//   }
+// `;
 
 
 const greyish = '#ddd';
 
 
-export const StyledUIContainer = styled('div') `
-  display: flex;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-`;
 
-export const StyledToolbar = styled('div') `
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 56px;
-  background: #00b0e9;
-  color: #fff;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
-  z-index: 1;
 
-  & h1 {
-    font-size: 20px;
-    color: #fafafa;
-    margin-left: 16px;
-    font-weight: 400;
-  }
+// export const StyledToolbar = styled('div') `
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   height: 56px;
+//   background: #00b0e9;
+//   color: #fff;
+//   box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px, rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+//   z-index: 1;
 
-  & button {
-    margin-right: 16px;
-    background: #fafafa;
-    color: #212121;
-    border-radius: 5px;
-    padding: 5px;
-    font-weight: bold;
-  }
+//   & h1 {
+//     font-size: 20px;
+//     color: #fafafa;
+//     margin-left: 16px;
+//     font-weight: 400;
+//   }
 
-  & .display-name-editor {
-    display: inline;
-  }
-`;
+//   & button {
+//     margin-right: 16px;
+//     background: #fafafa;
+//     color: #212121;
+//     border-radius: 5px;
+//     padding: 5px;
+//     font-weight: bold;
+//   }
 
-export const StyledMainContainer = styled('div') `
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  grid-template-areas: "video video video chat";
-  background: #e6eaed;
-`;
+//   & .display-name-editor {
+//     display: inline;
+//   }
+// `;
 
-export const StyledVideoContainer = styled('div') `
-  grid-area: video;
-  overflow: hidden;
+// export const StyledMainContainer = styled('div') `
+//   flex: 1;
+//   display: grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-template-rows: 1fr;
+//   grid-template-areas: "video video video chat";
+//   background: #e6eaed;
+// `;
 
-  & .videogrid {
-    height: 100%;
-  }
+// export const StyledVideoContainer = styled('div') `
+//   grid-area: video;
+//   overflow: hidden;
 
-  & video {
-    object-fit: contain;
-    width: 50%;
-    height: 100%;
-    margin: auto;
-    justify-self: center;
-    align-self: center;
-  }
-`;
+//   & .videogrid {
+//     height: 100%;
+//   }
+
+//   & video {
+//     object-fit: contain;
+//     width: 50%;
+//     height: 100%;
+//     margin: auto;
+//     justify-self: center;
+//     align-self: center;
+//   }
+// `;
 
 export const StyledMessageGroup = styled('div') `
   margin-top: 16px;

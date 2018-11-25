@@ -48,27 +48,22 @@ export default class Welcome extends Component {
      >
       <SWRTC.Provider configUrl={config_Url}>
         {/* Render based on the connection state */}
-        <SWRTC.Connecting>
+        <SWRTC.Connecting className='connecting'>
           <h1>Connecting...</h1>
         </SWRTC.Connecting>
-          <SWRTC.Connected>
-            <h1>Connected!</h1>
+          <SWRTC.Connected className='connected'>
               <SWRTC.RequestUserMedia audio video auto />
                   <SWRTC.Room name="waiting">
                   {({room, peers, localMedia, remoteMedia}) => {
                      if (peers.length === 1) {
-
                         return <Redirect push to={`/VideoPage`} />
-
                       } else {
-                        return (<div className="Welcome">
-                    <h1>Waiting Room</h1>
-                     <h1>Chat will begin when there is a available user</h1>
-
-                  </div>);
-                      }
-             }}
-
+                        return (
+                          <div className="Welcome">
+                             <h1>Chat will begin when there is a available user</h1>
+                          </div>);
+                       }
+                  }}
            </SWRTC.Room>
         </SWRTC.Connected>
       </SWRTC.Provider>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Provider } from "react-redux";
+import { Link } from 'react-router-dom';
 import * as SWRTC from "@andyet/simplewebrtc";
-import { Actions, Selectors, GridLayout, Video } from "@andyet/simplewebrtc";
+import { Actions, Selectors, Video, GridLayout, getMedia } from "@andyet/simplewebrtc";
 import axios from 'axios';
 
 
@@ -13,6 +14,8 @@ window.store = store;
 window.actions = Actions;
 window.selectors = Selectors;
 const params = new URLSearchParams(window.location.search);
+
+let i = 10;
 
 
 class VideoPageController extends React.Component {
@@ -26,11 +29,25 @@ class VideoPageController extends React.Component {
           room: res.data.data[0].roomname
         }))
       })
-
  }
+
+
+countDown() {
+    if(i === 10) {
+            setInterval(function () {
+                 return <p>{i--}</p>
+            }, 1000);
+        }
+    }
+
+
+
+
+
 
   renderMyRoom = () => {
     const ROOM_NAME = this.state.room
+    // console.log(getMediaTrack());
   return (
     <SWRTC.Room name={ROOM_NAME}>
                   {({room, peers, localMedia, remoteMedia}) => {
@@ -39,23 +56,39 @@ class VideoPageController extends React.Component {
                       }
                         const remoteVideos = remoteMedia.filter(m => m.kind === 'video');
                         const localVideos = localMedia.filter(m => m.kind === 'video');
-                        console.log(this.state.room)
-                        console.log(peers.length)
+                        // console.log(this.state.room)
+                        // console.log(peers.length)
+                        console.log(remoteVideos)
+                        console.log(localVideos)
                        return (
                     <div className='StyledUIContainer'>
-                      <div className='StyledMainContainer'>
-                        <div className ='StyledVideoContainer'>
+                        <div className ='title'>
+                          <button> <Link to='/Welcome'> SKIP </Link></button>
+                          <button>OFF</button>
+                        </div>
 
-                          <GridLayout
-                            className='videogrid'
-                            items={[...localVideos, ...remoteVideos]}
+                      <div className='StyledMainContainer'>
+                           <div className='remote'>
+                             <GridLayout
+                            className='videogridremote'
+                            items={[ ...remoteVideos]}
                             renderCell={(item) => (<Video media={item} />)}
-                          />
-                      </div>
+                            />
+                          </div>
+                          <div className='local'>
+                            <GridLayout
+                              className='videogrid'
+                              items={[...localVideos]}
+                              renderCell={(item) => (<Video media={item} />)}
+                            />
+                          </div>
+
+
+
                      </div>
                     </div>
                 )
-             }
+              }
            }
            </SWRTC.Room>
   );
@@ -69,13 +102,13 @@ class VideoPageController extends React.Component {
     userData={userData}
     roomName={params.get('room')}
      >
+
       <SWRTC.Provider configUrl={config_Url}>
         {/* Render based on the connection state */}
         <SWRTC.Connecting>
           <h1>Connecting...</h1>
         </SWRTC.Connecting>
           <SWRTC.Connected>
-            <h1>Connected!</h1>
               <SWRTC.RequestUserMedia audio video auto />
               { this.renderMyRoom() }
         </SWRTC.Connected>

@@ -2,23 +2,11 @@ import React from 'react';
 import { Provider } from "react-redux";
 import { Link } from 'react-router-dom';
 import * as SWRTC from "@andyet/simplewebrtc";
-import { Actions, Selectors, Video, GridLayout, ChatComposers, ChatList, ChatInput } from "@andyet/simplewebrtc";
+import { Actions, Selectors, Video, GridLayout, ChatList, ChatInput } from "@andyet/simplewebrtc";
 import axios from 'axios';
-import {
-  StyledChatContainer,
-  StyledChatInputContainer,
-  StyledMessageMetadata,
-  StyledMessage,
-  StyledTimestamp,
-  StyledTyping,
-  StyledDisplayName,
-  StyledMessageGroup,
-  StyledChatListContainer
-} from './Styles';
 
 
 const API_KEY = 'eb79cb49def49b161474d1cf';
-
 const config_Url = `https://api.simplewebrtc.com/config/guest/${API_KEY}`;
 const store = SWRTC.createStore();
 window.store = store;
@@ -26,7 +14,7 @@ window.actions = Actions;
 window.selectors = Selectors;
 const params = new URLSearchParams(window.location.search);
 
-let i = 10;
+// let i = 10;
 
 
 class VideoPageController extends React.Component {
@@ -43,18 +31,13 @@ class VideoPageController extends React.Component {
  }
 
 
-countDown() {
-    if(i === 10) {
-            setInterval(function () {
-                 return <p>{i--}</p>
-            }, 1000);
-        }
-    }
-
-
-
-
-
+// countDown() {
+//     if(i === 10) {
+//             setInterval(function () {
+//                  return <p>{i--}</p>
+//             }, 1000);
+//         }
+//     }
 
   renderMyRoom = () => {
     const ROOM_NAME = this.state.room
@@ -108,19 +91,13 @@ countDown() {
                                 </div>
                                     )}
                                   />
-                                  <div className='StyledChatInputContainer'>
-                                    {/*
-                                      The <ChatInput/> component is a basic textarea which will send the composed
-                                      message to the specified room address when the `Enter` key is pressed.
-
-                                      It will also generate and send typing notifications to the room.
-                                    */}
+                            </div>
+                              <div className='StyledChatInputContainer'>
                                     <ChatInput
                                       room={room.address}
                                       placeholder='Send a message...'
                                     />
-                                 </div>
-                            </div>
+                              </div>
                           </div>
                      </div>
                     </div>

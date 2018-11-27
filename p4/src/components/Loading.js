@@ -18,9 +18,9 @@ export default class Loading extends Component {
   render() {
     return (
       <div className="Loading">
-        <h1> Chat </h1>
+        <h1> ChatRoulette </h1>
          {this.state.fireRedirect
-          ? <Redirect push to={'/Welcome'} />
+          ? <Redirect push to={'/Home'} />
           : ''}
     </div>
     );

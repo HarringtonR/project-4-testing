@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import VideoPage from './components/VideoPage';
 import Welcome from './components/Welcome';
 import Loading from './components/Loading';
+import Home from './components/Home';
 
 class App extends Component {
 
@@ -14,6 +15,7 @@ class App extends Component {
           <Switch>
             <Route path= '/VideoPage' component = { VideoPage } />
             <Route path= '/Welcome' component = { Welcome } />
+            <Route path= '/Home' component = { Home } />
             <Route path= '/' component={ Loading } />
           </Switch>
       </div>

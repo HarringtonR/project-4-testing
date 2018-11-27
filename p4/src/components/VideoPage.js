@@ -52,15 +52,13 @@ class VideoPageController extends React.Component {
                         const localVideos = localMedia.filter(m => m.kind === 'video');
                         // console.log(this.state.room)
                         // console.log(peers.length)
-                        console.log(remoteVideos)
-                        console.log(localVideos)
                        return (
                     <div className='StyledUIContainer'>
-                        <div className ='title'>
+                      <div className='StyledMainContainer'>
+                      <div className ='title'>
                           <button> <Link to='/Welcome'> SKIP </Link></button>
                           <button>OFF</button>
                         </div>
-                      <div className='StyledMainContainer'>
                            <div className='remote'>
                              <GridLayout
                             className='videogridremote'

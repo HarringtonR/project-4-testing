@@ -1,6 +1,7 @@
 *{
   margin: 0 auto;
   max-width: 800px;
+  /*background-color: #343434;*/
 }
 .App{
   display: flex;
@@ -61,13 +62,15 @@ video{
 .local{
   margin: 0;
   position: absolute;
-  width: 10%;
+  width: 130px;
   top: 8vh;
-  left: 30vw;
+  margin-left: 20px;
   border: 1px solid white;
+  border-radius: 15px;
 }
 .local video{
   margin: 0;
+  border-radius: 15px;
 
 }
 
@@ -132,6 +135,7 @@ textarea{
   resize: none;
   color: white;
 }
+
 
 /*.StyledVideoContainer{
     width: 100%;

@@ -2,8 +2,19 @@ import React from 'react';
 import { Provider } from "react-redux";
 import { Link } from 'react-router-dom';
 import * as SWRTC from "@andyet/simplewebrtc";
-import { Actions, Selectors, Video, GridLayout, getMedia } from "@andyet/simplewebrtc";
+import { Actions, Selectors, Video, GridLayout, ChatComposers, ChatList, ChatInput } from "@andyet/simplewebrtc";
 import axios from 'axios';
+import {
+  StyledChatContainer,
+  StyledChatInputContainer,
+  StyledMessageMetadata,
+  StyledMessage,
+  StyledTimestamp,
+  StyledTyping,
+  StyledDisplayName,
+  StyledMessageGroup,
+  StyledChatListContainer
+} from './Styles';
 
 
 const API_KEY = 'eb79cb49def49b161474d1cf';
@@ -66,7 +77,6 @@ countDown() {
                           <button> <Link to='/Welcome'> SKIP </Link></button>
                           <button>OFF</button>
                         </div>
-
                       <div className='StyledMainContainer'>
                            <div className='remote'>
                              <GridLayout
@@ -82,9 +92,36 @@ countDown() {
                               renderCell={(item) => (<Video media={item} />)}
                             />
                           </div>
+                          <div className='chat'>
+                            <div className='StyledChatContainer'>
+                              <ChatList
+                              room={room.address}
+                              className='StyledChatListContainer'
+                              renderGroup={({ chats, peer }) => (
+                                <div className='StyledMessageGroup' key={chats[0].id}>
+                                  <div className ='StyledMessageMetadata'>
+                                    <span className='StyledDisplayName'>{peer.displayName ? peer.displayName : 'Anonymous'}</span>
+                                  </div>
+                                  {chats.map(message => (
+                                    <p className='StyledMessage' key={message.id}>{message.body}</p>
+                                  ))}
+                                </div>
+                                    )}
+                                  />
+                                  <div className='StyledChatInputContainer'>
+                                    {/*
+                                      The <ChatInput/> component is a basic textarea which will send the composed
+                                      message to the specified room address when the `Enter` key is pressed.
 
-
-
+                                      It will also generate and send typing notifications to the room.
+                                    */}
+                                    <ChatInput
+                                      room={room.address}
+                                      placeholder='Send a message...'
+                                    />
+                                 </div>
+                            </div>
+                          </div>
                      </div>
                     </div>
                 )

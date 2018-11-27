@@ -1,6 +1,7 @@
 *{
   margin: 0 auto;
   background-color: #343434;
+  max-width: 800px;
 }
 .App{
   display: flex;
@@ -10,17 +11,29 @@
 }
 .title{
   display: flex;
-  width: 100%;
+  position: absolute;
   justify-content: space-between;
-  height: 100px;
-  text-align: center;
   color: white;
+  width: 600px;
+  background: rgba(255, 255, 255, 0.0)
 }
 button{
   color:white;
   margin: 0;
   width: 5rem;
+  height: 2rem;
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.0);
+  border: none;
 }
+a{
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.0);
+  border: none;
+}
+
+
 
 h1{
   color: white;
@@ -37,27 +50,24 @@ video{
 
 .StyledUIContainer {
     display: flex;
-    flex-direction: column;
 
 }
 
 .StyledMainContainer{
   margin: 0 auto;
    display: flex;
-   width: 100vw;
-   height: 100vh;
+
 
 }
 .local{
   margin: 0;
   position: absolute;
-  width: 15%;
-  top: 15vh;
-  left: 22vw;
-    border: 1px solid white;
+  width: 10%;
+  top: 8vh;
+  left: 30vw;
+  border: 1px solid white;
 }
 .local video{
-  width: 100%;
   margin: 0;
 
 }
@@ -66,6 +76,59 @@ video{
   margin: 0 auto;
 }
 
+/*CHATROOM*/
+.chat{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.0);
+}
+.StyledChatContainer{
+  flex: 1;
+  overflow-y: auto;
+  margin: 0 auto;
+  position: absolute;
+
+}
+.StyledChatInputContainer{
+  padding: 5px;
+  border-top: 0px solid grey;
+}
+.StyledChatListContainer{
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+   background-color: rgba(255, 255, 255, 0.0);
+
+}
+
+.StyledMessageGroup{
+    margin-top: 16px;
+    padding: 0 10px;
+
+}
+
+.StyledMessageMetadata{
+  margin: 0;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 40px;
+}
+
+
+.StyledDisplayName {
+  font-weight: bold;
+}
+
+.StyledMessage{
+  color: white;
+}
+
+textarea{
+  background-color: rgba(255, 255, 255, 0.0);
+  border:none;
+  border-top: 1px solid white;
+}
 
 /*.StyledVideoContainer{
     width: 100%;

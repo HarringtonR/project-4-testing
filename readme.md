@@ -9,14 +9,14 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Due Date | Deliverable | Status
 |:---:|---|---|:---:|
-|Day 1| Nov 20 | Prject Worksheet, Project Approval, Wireframes, Priority Matrix, Determine Functional Components | In progress
-|Day 2| Nov 21 | Basic Layout in Code: Landing Page, Video Page, Nav | Incomplete
-|Day 3| Nov 23/24 | Basic Functionality: Firebase + Video research | Incomplete
-|Day 4| Nov 25/26 | Linking Firebase to Video to Current User | Incomplete
-|Day 3| Nov 27 | Video Linked Randomly with any user | Incomplete
-|Day 4| Nov 28 | Unexpected problems | 
-|Day 5| Nov 29 | CSS, Problem Sovling, Possibly Post-MVP  | Incomplete
-|Day 6| Nov 30 | POST MVP Chat | Incomplete
+|Day 1| Nov 20 | Prject Worksheet, Project Approval, Wireframes, Priority Matrix, Determine Functional Components | Complete
+|Day 2| Nov 21 | Basic Layout in Code: Landing Page, Video Page, Nav | Complete
+|Day 3| Nov 23/24 | Basic Functionality: Firebase + Video research | Complete
+|Day 4| Nov 25/26 | Linking Firebase to Video to Current User | N/A
+|Day 3| Nov 27 | Video Linked Randomly with any user | Complete
+|Day 4| Nov 28 | Unexpected problems--- CSS |  In progress
+|Day 5| Nov 29 | CSS, Problem Sovling, Possibly Post-MVP  | In Progress
+|Day 6| Nov 30 | POST MVP Chat | In progress
 |Day 7| Dec 1 | Final Touches, Presentation Prep | Incomplete
 |Day 7| Dec 2 | Deploy App | Incomplete
 |Day 7| Dec 3 | Present | Incomplete
@@ -24,7 +24,7 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 ## Project Description
 
-My App is a cover of chatroulette with an added feature. Where users will be randomly connected to other online users. By Clicking next they will randomly connect to another available user. However there is a 60 second timer on all conversations. Chats can end by a user clicking the end button upon which they will be reconnected to another user, they can wait for the timer to expire, or they can add more time to stay on with the current user.
+My App is a cover of chatroulette with an added feature. Where users will be randomly connected to other online users. By Clicking next they will randomly connect to another available user. However there is a 60 second timer on all conversations. Chats can end by a user clicking the end button upon which they will be reconnected to another user, they can wait for the timer to expire, or they can turn off the timer to stay on the chat.
 
 
 ## Wireframes
@@ -100,19 +100,19 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Wireframing| L | 1 hrs | 1hrs | hrs |
-| App | L | 3 hrs | hrs | hrs |
-| Switcher | L | 3 hrs| hrs | hrs |
-| Create User | L | 5 hrs | hrs | hrs |
-| Login Page/ Authentication | H | 8 hrs | hrs | hrs |
-| Firebase Login/User Auth | H | 10 hrs| hrs | hrs |
-| Rendering Video | H | 10 hrs| hrs | hrs |
-| Linking Video | H | 8 hrs| hrs | hrs |
-| Randomizing Connections | H | 8 hrs| hrs | hrs |
-| Navigation | L | 4 hrs | hrs | hrs |
-| Chats-PMVP | L | 10 hrs | 0hrs | hrs |
-| CSS| L | 5hrs | hrs | hrs |
-| Total | H | 75 hrs| hrs | hrs |
+| Wireframing| L | 1 hrs | 1hrs | 1hrs |
+| App | L | 3 hrs | 1hrs | hrs |
+| Switcher | L | 3 hrs| 1hrs | hrs |
+| Create User | L | 5 hrs | 0hrs | 0hrs |
+| Login Page/ Authentication | H | 8 hrs | 0hrs | 0hrs |
+| Firebase Login/User Auth | H | 10 hrs| 0hrs | 0hrs |
+| Rendering Video | H | 10 hrs| 5hrs | hrs |
+| Linking Video | H | 8 hrs| 10hrs | hrs |
+| Randomizing Connections | H | 8 hrs| 9hrs | hrs |
+| Navigation | L | 4 hrs | 2hrs | hrs |
+| Chats-PMVP | L | 10 hrs | 2hrs | hrs |
+| CSS| L | 5hrs | 5hrs | hrs |
+| Total | H | 75 hrs| 35hrs | hrs |
 
 
 ## Helper Functions

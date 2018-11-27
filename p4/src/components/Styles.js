@@ -85,45 +85,35 @@ const greyish = '#ddd';
 //   }
 // `;
 
-export const StyledMessageGroup = styled('div') `
-  margin-top: 16px;
-  padding: 0 10px;
+// export const StyledMessageGroup = styled('div') `
+//   margin-top: 16px;
+//   padding: 0 10px;
 
-  & img {
-    height: 32px;
-    width: 32px;
-    float: left;
-  }
-`;
+//   & img {
+//     height: 32px;
+//     width: 32px;
+//     float: left;
+//   }
+// `;
 
-export const StyledDisplayName = styled('span') `
-  font-weight: bold;
-`;
+// export const StyledDisplayName = styled('span') `
+//   font-weight: bold;
+// `;
 
-export const StyledTimestamp = styled('span') `
-  color: ${greyish};
-  font-size: 14px;
-`;
+// export const StyledTimestamp = styled('span') `
+//   color: ${greyish};
+//   font-size: 14px;
+// `;
 
-export const StyledMessageMetadata = styled('p') `
-  margin: 0;
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 40px;
-`;
 
-export const StyledMessage = styled('p') `
-  margin: 0;
-  margin-left: 40px
-`;
 
-export const StyledTyping = styled('div') `
-  height: 20px;
-  font-size: 12px;
-  padding-left: 10px;
-`;
+
+
+// export const StyledTyping = styled('div') `
+//   height: 20px;
+//   font-size: 12px;
+//   padding-left: 10px;
+// `;
 
 export const StyledChatListContainer = css`
   flex: 1;

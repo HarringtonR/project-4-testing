@@ -25,7 +25,11 @@
       }
       .remote {
         display: flex;
-
-
+      }
+      .chat{
+        width: 100vw;
+      }
+      textarea{
+        width: 100vw;
       }
     }

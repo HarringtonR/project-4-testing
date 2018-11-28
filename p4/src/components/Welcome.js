@@ -45,6 +45,7 @@ export default class Welcome extends Component {
     store={store}
     userData={userData}
     roomName={"waiting room"}
+    className= 'launch'
      >
       <SWRTC.Provider configUrl={config_Url}>
         {/* Render based on the connection state */}

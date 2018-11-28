@@ -1,13 +1,12 @@
 *{
   margin: 0 auto;
-  max-width: 800px;
-  /*background-color: #343434;*/
 }
 .App{
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+  background-color: #343434;
 }
 .title{
   display: flex;
@@ -25,6 +24,7 @@ button{
   opacity: 1;
   background: rgba(255, 255, 255, 0.0);
   border: none;
+  z-index: 1;
 }
 a{
   color: white;
@@ -71,7 +71,6 @@ video{
 .local video{
   margin: 0;
   border-radius: 15px;
-
 }
 
 .remote{
@@ -81,7 +80,8 @@ video{
 /*CHATROOM*/
 .chat{
   position: absolute;
-  top: 65vh;
+  bottom:0vh;
+  width: 50vw;
   background-color: rgba(255, 255, 255, 0.0);
 }
 .StyledChatContainer{
@@ -90,11 +90,11 @@ video{
   margin: 0 auto;
   width: 600px;
   max-height: 30vh;
-  position: absolute;
+  background-color: rgba(255, 255, 255, 0.0);
+  align-items: flex-end;
 
 }
 .StyledChatInputContainer{
-  margin-top: 30vh;
   padding: 5px;
   border-top: 0px solid grey;
 }
@@ -134,8 +134,20 @@ textarea{
   width: 30vw;
   resize: none;
   color: white;
+
 }
 
+/*.Loading{
+    background-color: #343434;
+
+}
+
+.Home{
+    background-color: #343434;
+}
+.launch{
+    background-color: #343434;
+}*/
 
 /*.StyledVideoContainer{
     width: 100%;

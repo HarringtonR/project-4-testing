@@ -32,11 +32,11 @@ export default class Matching extends Component {
   }
 
 
-  newRoom(){
-    axios.post('/videoPage',  {
-            roomname: makeid()
-            })
-      }
+  newRoom() {
+    axios.post('/videoPage', {
+      roomname: makeid()
+    })
+  }
 
   render() {
     const { userData } = this.props;
@@ -54,8 +54,8 @@ export default class Matching extends Component {
         </SWRTC.Connecting>
           <SWRTC.Connected className='connected'>
               <SWRTC.RequestUserMedia audio video auto />
-                  <SWRTC.Room name="waiting">
-                  {({room, peers, localMedia, remoteMedia}) => {
+                <SWRTC.Room name="waiting">
+                  {({peers}) => {
                      if (peers.length === 1) {
                         return <Redirect push to={`/VideoPage`} />
                       } else {
@@ -65,8 +65,8 @@ export default class Matching extends Component {
                           </div>);
                        }
                   }}
-           </SWRTC.Room>
-        </SWRTC.Connected>
+             </SWRTC.Room>
+         </SWRTC.Connected>
       </SWRTC.Provider>
     </Provider>
     );

@@ -69,9 +69,9 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 #### PostMVP 
 
 - Chat under video
-- Build in React Native
 - CSS+
 - More storage of information from users -Times /Connection history
+- Work on other project
 
 
 ## Architectural Design
@@ -87,7 +87,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 #### Front-end Technologies: React, NPM packages
 
-#### Back-end Technologies: NodeJS, Express, Socket.IO
+#### Back-end Technologies: Express, SimpleWebRTC
 
 | Component | Description | 
 | --- | --- |  
@@ -110,11 +110,11 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Firebase Login/User Auth | H | 10 hrs| 0hrs | 0hrs |
 | Rendering Video | H | 10 hrs| 5hrs | hrs |
 | Linking Video | H | 8 hrs| 10hrs | hrs |
-| Randomizing Connections | H | 8 hrs| 9hrs | hrs |
+| Randomizing Connections | H | 8 hrs| 10hrs | hrs |
 | Navigation | L | 4 hrs | 2hrs | hrs |
 | Chats-PMVP | L | 10 hrs | 2hrs | hrs |
-| CSS| L | 5hrs | 5hrs | hrs |
-| Total | H | 75 hrs| 35hrs | hrs |
+| CSS| L | 5hrs | 15hrs | hrs |
+| Total | H | 75 hrs| 52hrs | hrs |
 
 
 ## Helper Functions
@@ -125,7 +125,7 @@ Helper functions should be generic enought that they can be reused in other appl
 | compondentDidMount | Loading video and grabing user information| 
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
+####[Hosting and Video service used - SIMPLEWEBRTC](https://www.simplewebrtc.com/)
 
 
 ## Code Snippet
@@ -133,13 +133,25 @@ Helper functions should be generic enought that they can be reused in other appl
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+            <SWRTC.Room name="waiting">
+                  {({room, peers, localMedia, remoteMedia}) => {
+                     if (peers.length === 1) {
+                        return <Redirect push to={`/VideoPage`} />
+                      } else {
+                        return (
+                          <div className="Matching">
+                             <h1>Chat will begin when another user is available</h1>
+                          </div>);
+                       }
+                  }}
+            </SWRTC.Room>
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+ Use this section to document what changes were made and the reasoning behind those changes.
+ -Had massive difficulties trying to style the imported componentents from SimplewebRTC.
+ -Using the simpleWebRTC I no longer was required to user firebase for user log in.
+ 
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.

@@ -10,7 +10,7 @@ export default class Loading extends Component {
         <h2><Link to ='./Matching'>Start Video Chat </Link></h2>
         <div className ='info'>
           <h4> Info </h4>
-          <p>Click above to Video Chat. To continue conversation turn off the timer. To find a new user click the red button.</p>
+          <p>Click above to Video Chat. To continue conversation use the "add 30 seconds button" to continue adding time. To find a new user click skip.</p>
         </div>
     </div>
     );

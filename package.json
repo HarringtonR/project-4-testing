@@ -28,6 +28,7 @@
     "nodemon": "^1.18.6",
     "opentok": "0.1.0",
     "pg-promise": "^8.5.2",
+    "react-dom": "^16.6.3",
     "react-video-chat": "^1.0.0-alpha.1",
     "socket.io": "^2.1.1"
   },

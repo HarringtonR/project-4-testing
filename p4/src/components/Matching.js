@@ -19,7 +19,7 @@ function makeid() {
 
 
 
-export default class Welcome extends Component {
+export default class Matching extends Component {
   state = {
     room: null,
     users: null,
@@ -60,8 +60,8 @@ export default class Welcome extends Component {
                         return <Redirect push to={`/VideoPage`} />
                       } else {
                         return (
-                          <div className="Welcome">
-                             <h1>Chat will begin when there is a available user</h1>
+                          <div className="Matching">
+                             <h1>Chat will begin when another user is available</h1>
                           </div>);
                        }
                   }}

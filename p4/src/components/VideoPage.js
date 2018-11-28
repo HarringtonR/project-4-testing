@@ -1,8 +1,9 @@
 import React from 'react';
+import Timer from './Timer';
 import { Provider } from "react-redux";
 import { Link } from 'react-router-dom';
 import * as SWRTC from "@andyet/simplewebrtc";
-import { Actions, Selectors, Video, GridLayout, ChatList, ChatInput } from "@andyet/simplewebrtc";
+import { Actions, Selectors, Video, GridLayout, ChatList, ChatInput} from "@andyet/simplewebrtc";
 import axios from 'axios';
 
 
@@ -14,36 +15,29 @@ window.actions = Actions;
 window.selectors = Selectors;
 const params = new URLSearchParams(window.location.search);
 
-// let i = 10;
 
 
 class VideoPageController extends React.Component {
   state = {
     room: null
   }
- componentDidMount(){
+
+  componentDidMount() {
     axios.get('/videoPage')
-      .then( res => {
+      .then(res => {
         this.setState(prevState => ({
           room: res.data.data[0].roomname
         }))
       })
- }
+  }
 
-
-// countDown() {
-//     if(i === 10) {
-//             setInterval(function () {
-//                  return <p>{i--}</p>
-//             }, 1000);
-//         }
-//     }
 
   renderMyRoom = () => {
     const ROOM_NAME = this.state.room
     // console.log(getMediaTrack());
-  return (
-    <SWRTC.Room name={ROOM_NAME}>
+    return (
+      <SWRTC.Room name={ROOM_NAME}>
+
                   {({room, peers, localMedia, remoteMedia}) => {
                      if (!room.joined) {
                         return <h1>Joining room...</h1>;
@@ -57,7 +51,7 @@ class VideoPageController extends React.Component {
                       <div className='StyledMainContainer'>
                       <div className ='title'>
                           <button> <Link to='/Welcome'> SKIP </Link></button>
-                          <button>OFF</button>
+                          <Timer />
                         </div>
                            <div className='remote'>
                              <GridLayout
@@ -74,10 +68,14 @@ class VideoPageController extends React.Component {
                             />
                           </div>
                           <div className='chat'>
-                            <div className='StyledChatContainer'>
+
+                            <div
+                            className='StyledChatContainer'
+                            ref= 'scroll'>
+
+
                               <ChatList
                               room={room.address}
-                              className='StyledChatListContainer'
                               renderGroup={({ chats, peer }) => (
                                 <div className='StyledMessageGroup' key={chats[0].id}>
                                   <div className ='StyledMessageMetadata'>
@@ -96,15 +94,19 @@ class VideoPageController extends React.Component {
                                       placeholder='Send a message...'
                                     />
                               </div>
+
                           </div>
                      </div>
                     </div>
                 )
               }
            }
+
            </SWRTC.Room>
-  );
-}
+
+    );
+  }
+
 
   render() {
     const { userData } = this.props;

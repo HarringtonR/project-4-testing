@@ -48,6 +48,45 @@ video{
      align-self: center;
    }
 
+
+
+.Home{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.Home h2{
+  margin-top: 20vh;
+}
+.info h4{
+  padding-bottom: 1vh;
+}
+.info{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 200px;
+  margin-top: 20vh;
+  color: white;
+  text-align: center;
+}
+
+.Timer{
+  z-index: 1;
+  display: flex;
+  margin: 0;
+  width: 50%;
+  justify-content: space-between;
+}
+.Timer h1{
+  margin: 0;
+  padding: 0;
+}
+
+.Matching{
+  display: flex;
+  text-align: center;
+}
 .StyledUIContainer {
     display: flex;
 
@@ -88,35 +127,31 @@ video{
   flex: 1;
   overflow-y: auto;
   margin: 0 auto;
-  width: 600px;
   max-height: 30vh;
   background-color: rgba(255, 255, 255, 0.0);
-  align-items: flex-end;
+  opacity: .8;
 
 }
+
 .StyledChatInputContainer{
   padding: 5px;
   border-top: 0px solid grey;
-}
-.StyledChatListContainer{
-  flex: 1;
-  overflow-y: auto;
-  margin-bottom: 10px;
 
 }
 
 .StyledMessageGroup{
     padding: 0 10px;
 
+
 }
 
-.StyledMessageMetadata{
+/*.StyledMessageMetadata{
   margin: 0;
   margin-bottom: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+}*/
 
 
 .StyledDisplayName {
@@ -137,24 +172,7 @@ textarea{
 
 }
 
-/*.Loading{
-    background-color: #343434;
 
-}
-
-.Home{
-    background-color: #343434;
-}
-.launch{
-    background-color: #343434;
-}*/
-
-/*.StyledVideoContainer{
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    align-self: center;
-  }*/
 
 
 

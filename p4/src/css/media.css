@@ -7,12 +7,17 @@
       .App{
         width: 100vw;
       }
+
+      .Home{
+       text-align: center;
+       height: 100%;
+        max-width: 300px;
+      }
     .StyledUIContainer {
         height: 100vh;
       }
       .local{
         top: 5vh;
-       left: 5vw;
        width: 100px;
 
       }

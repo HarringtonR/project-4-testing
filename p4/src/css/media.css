@@ -4,29 +4,21 @@
       .title{
         width: 100vw;
       }
-      .App{
-        width: 100vw;
-      }
 
-      .Home{
-       text-align: center;
-       height: 100%;
-        max-width: 300px;
+
+      .StyledUIContainer{
+        margin: 0 auto;
       }
-    .StyledUIContainer {
+      .StyledMainContainer{
+        margin: 0;
+        width: 100vw;
         height: 100vh;
       }
       .local{
-        top: 5vh;
        width: 100px;
 
       }
       .remote video{
-      margin: 0 auto;
-      height: 736px;
-      justify-content: center;
-      align-self: center;
-      width: auto;
       }
       .remote {
         display: flex;
@@ -37,4 +29,5 @@
       textarea{
         width: 100vw;
       }
+
     }

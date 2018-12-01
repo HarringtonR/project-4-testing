@@ -37,7 +37,6 @@ class VideoPageController extends React.Component {
     // console.log(getMediaTrack());
     return (
       <SWRTC.Room name={ROOM_NAME}>
-
                   {({room, peers, localMedia, remoteMedia}) => {
                      if (!room.joined) {
                         return <h1>Joining room...</h1>;
@@ -50,7 +49,7 @@ class VideoPageController extends React.Component {
                     <div className='StyledUIContainer'>
                       <div className='StyledMainContainer'>
                       <div className ='title'>
-                          <button> <Link to='/Welcome'> SKIP </Link></button>
+                          <button> <Link to='/Matching'> SKIP </Link></button>
                           <Timer />
                         </div>
                            <div className='remote'>
@@ -70,16 +69,13 @@ class VideoPageController extends React.Component {
                           <div className='chat'>
 
                             <div
-                            className='StyledChatContainer'
-                            ref= 'scroll'>
-
-
+                            className='StyledChatContainer'>
                               <ChatList
                               room={room.address}
                               renderGroup={({ chats, peer }) => (
                                 <div className='StyledMessageGroup' key={chats[0].id}>
                                   <div className ='StyledMessageMetadata'>
-                                    <span className='StyledDisplayName'>{peer.displayName ? peer.displayName : 'Anonymous'}</span>
+                                    <span className='StyledDisplayName'>User id - {peer.id[0]}</span>
                                   </div>
                                   {chats.map(message => (
                                     <p className='StyledMessage' key={message.id}>{message.body}</p>

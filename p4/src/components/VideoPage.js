@@ -31,7 +31,6 @@ class VideoPageController extends React.Component {
       })
   }
 
-
   renderMyRoom = () => {
     const ROOM_NAME = this.state.room
     // console.log(getMediaTrack());

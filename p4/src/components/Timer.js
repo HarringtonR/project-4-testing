@@ -5,7 +5,7 @@ import '../index.css';
 export default class Timer extends Component {
   state = {
     fireRedirect: false,
-    count: 500
+    count: 60
   }
 
   timer() {

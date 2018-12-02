@@ -1,6 +1,7 @@
 # Project Overview
 
 ## Project Links
+####[HEROKU LINK](https://herokuchatrandom.herokuapp.com/)
 ####[Project Repo](https://git.generalassemb.ly/HarringtonR/project-4)
 ####[Project Repo testing](https://github.com/HarringtonR/project-4-testing)
 ####[Hosting and Video service used](https://www.simplewebrtc.com/)
@@ -16,17 +17,17 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Day 3| Nov 23/24 | Basic Functionality: Firebase + Video research | Complete
 |Day 4| Nov 25/26 | Linking Firebase to Video to Current User | N/A
 |Day 3| Nov 27 | Video Linked Randomly with any user | Complete
-|Day 4| Nov 28 | Unexpected problems--- CSS |  In progress
-|Day 5| Nov 29 | CSS, Problem Sovling, Possibly Post-MVP  | In Progress
-|Day 6| Nov 30 | POST MVP Chat | In progress
-|Day 7| Dec 1 | Final Touches, Presentation Prep | Incomplete
-|Day 7| Dec 2 | Deploy App | Incomplete
+|Day 4| Nov 28 | Unexpected problems--- CSS |  Complete
+|Day 5| Nov 29 | CSS, Problem Sovling, Possibly Post-MVP  | Complete
+|Day 6| Nov 30 | POST MVP Chat | Complete
+|Day 7| Dec 1 | Final Touches, Presentation Prep | Complete
+|Day 7| Dec 2 | Deploy App | Complete
 |Day 7| Dec 3 | Present | Incomplete
 
 
 ## Project Description
 
-My App is a cover of chatroulette with an added feature. Where users will be randomly connected to other online users. By Clicking next they will randomly connect to another available user. However there is a 60 second timer on all conversations. Chats can end by a user clicking the end button upon which they will be reconnected to another user, they can wait for the timer to expire, or they can turn off the timer to stay on the chat.
+My App is a cover of chatroulette with an added feature. Where users will be randomly connected to other online users. By Clicking next they will randomly connect to another available user. However there is a 60 second timer on all conversations. Chats can end by a user clicking the end button upon which they will be reconnected to another user, they can wait for the timer to expire, or they can add more time to stay. However time is user specific. So you have to make sure your partner is adding more time if you want to stay and chat.
 
 
 ## Wireframes
@@ -58,7 +59,6 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### MVP 
 
-- Login to user account/ auto login with Firebase(store login info)
 - Video Rendering with local users camera/ camera access
 - As Mobile as Possible
 - 1 minute timer on video
@@ -155,11 +155,6 @@ Use this section to include a brief code snippet of functionality that you are p
 
 ## Issues and Resolutions
  Use this section to list of all major issues encountered and their resolution.
-
- [TBD Error 1]()
-
- [TBD Error 2]()
-
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+ 
+- using prebuilt components
+- css - connection issues

@@ -16,19 +16,6 @@ chatroomController.index = (req, res) => {
     });
 };
 
-// chatroomController.show = (req, res) => {
-//   Chatroom.findById(req.params.id)
-//     .then(chatroom => {
-//       res.json({
-//         message: 'ok',
-//         data: chatroom,
-//       });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json({ err });
-//     });
-// };
 
 chatroomController.create = (req, res) => {
   Chatroom.create({
@@ -48,40 +35,6 @@ chatroomController.create = (req, res) => {
     });
 };
 
-// chatroomController.update = (req, res) => {
-//   Chatroom.update(
-//     {
-//       flavor: req.body.flavor,
-//       description: req.body.description,
-//       rating: req.body.rating,
-//       url: req.body.url,
-//     },
-//     req.params.id,
-//   )
-//     .then(chatroom => {
-//       res.json({
-//         message: 'ok',
-//         data: chatroom,
-//       });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json({ err });
-//     });
-// };
 
-// chatroomController.destroy = (req, res) => {
-//   Chatroom.destroy(req.params.id)
-//     .then(chatroom => {
-//       res.json({
-//         message: 'ok',
-//         data: chatroom,
-//       });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json({ err });
-//     });
-// };
 
 module.exports = chatroomController;

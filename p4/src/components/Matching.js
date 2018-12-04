@@ -9,6 +9,7 @@ window.store = store;
 const API_KEY = 'eb79cb49def49b161474d1cf';
 const config_Url = `https://api.simplewebrtc.com/config/guest/${API_KEY}`;
 
+//https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
 function makeid() {
   var text = "";
   var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
